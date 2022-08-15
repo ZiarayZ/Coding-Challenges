@@ -83,10 +83,12 @@ class SinglyLinkedList {
             return false;//change to throw index error
         } else if (index === 0) {
             this.head = this.head.next;
+            this.count--;
             return true;
-        } else {
+        } else if (index > 0) {
             let item = this.getNode(index);
             item = item.next;
+            this.count--;
             return true;
         }
 
