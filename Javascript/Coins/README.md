@@ -1,2 +1,2 @@
-# PayPal Question
+# [PayPal](https://github.com/twowaits/SDE-Interview-Questions/tree/master/PayPal) Question
 - Find the least number of coins required that can make any desired amount. The coins can only be pennies(1), nickels(5), dimes(10) and quarters(25).
