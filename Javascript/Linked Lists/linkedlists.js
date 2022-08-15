@@ -104,7 +104,7 @@ class SinglyLinkedList extends LinkedList {
     get popBack() {
         let last = this.tail.value;
         this.tail = this.getNode(this.count-2);
-        this.tail.next = NaN;
+        this.tail.next = undefined;
         this.count--;
         return last;
     }
@@ -190,7 +190,7 @@ class DoublyLinkedList extends LinkedList {
     get popBack() {
         let following = this.tail.value;
         this.tail = this.tail.prev;
-        this.tail.next = NaN;
+        this.tail.next = undefined;
         this.count--;
         return following;
     }
