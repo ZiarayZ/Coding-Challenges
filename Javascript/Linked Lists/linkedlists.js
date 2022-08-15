@@ -78,6 +78,13 @@ class SinglyLinkedList {
         return prev.value;
     }
 
+    remove(index) {
+        if (index > this.count) {
+            return -1;//change to throw error
+        }
+        //use getNode method to locate index-1
+    }
+
     getNode(index) {
         if (index > this.count) {
             return -1;//change to throw error
