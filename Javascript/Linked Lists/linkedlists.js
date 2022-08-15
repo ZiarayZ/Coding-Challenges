@@ -6,7 +6,7 @@ class SLLNode {
 
     getNode(index) {
         if (index > 0) {
-            return this.next.getNode(index);
+            return this.next.getNode(index-1);
         }
         return this;
     }
