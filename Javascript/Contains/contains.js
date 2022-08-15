@@ -14,10 +14,10 @@ String.prototype.contains = function (value) {
             location = -1;
         }
         if (char == value.length) {
-            return true;
+            return true;//or return location as index
         }
     }
-    return false
+    return false;//or return -1 as index
 }
 
 testingString = "TODO list: create games";
