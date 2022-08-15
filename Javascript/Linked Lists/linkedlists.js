@@ -43,10 +43,10 @@ class LinkedList {
     contains(item) {
         for (let i = 0; i < this.count; i++) {
             if (this.getNode(i).value === item) {
-                return true;//could also use a integer location instead
+                return i;
             }
         }
-        return false;//which would mean returning -1 here
+        return -1;
     }
 
     get values() {
@@ -111,27 +111,34 @@ class SinglyLinkedList extends LinkedList {
     }
 
     remove(index) {
-        if (index >= this.count || index < 0) {
-            return false;//change to throw index error
-        } else if (index === 0) {
-            this.head = this.head.next;
-            this.count--;
-            return true;
-        } else if (index > 0) {
-            let item = this.getNode(index-1);
-            item.next = item.next.next;
-            this.count--;
-            return true;
+        if (Number.isInteger(index)) {
+            if (index >= this.count || index < 0) {
+                return undefined;
+            } else if (index === 0) {
+                this.head = this.head.next;
+                this.count--;
+                return true;
+            } else if (index > 0) {
+                let item = this.getNode(index-1);
+                item.next = item.next.next;
+                this.count--;
+                return true;
+            }
         }
 
-        return false;//change to throw type error
+        throw new TypeError("Type '".concat(JSON.stringify(index)).concat("' cannot be used as an index type."));
     }
 
     getNode(index) {
-        if (index >= this.count || index < 0) {
-            return -1;//change to throw error
+        if (Number.isInteger(index)) {
+            if (index >= this.count || index < 0) {
+                return undefined;
+            } else if (index >= 0 && index < this.count) {
+                return this.head.getNextNode(index);
+            }
         }
-        return this.head.getNextNode(index);
+
+        throw new TypeError("Type '".concat(JSON.stringify(index)).concat("' cannot be used as an index type."));
     }
 }
 
@@ -189,46 +196,50 @@ class DoublyLinkedList extends LinkedList {
     }
 
     remove(index) {
-        if (index >= this.count || index < 0) {
-            return false;//change to throw index error
-        } else if (index === 0) {
-            this.head = this.head.next;
-            this.count--;
-            return true;
-        } else if (index === this.count-1) {
-            this.tail = this.tail.prev;
-            this.count--;
-            return true;
-        } else if (index > 0) {
-            let item = this.getNode(index);
-            item.next.prev = item.prev;
-            item.prev.next = item.next;
-            item = item.next;
-            this.count--;
-            return true;
+        if (Number.isInteger(index)) {
+            if (index >= this.count || index < 0) {
+                return undefined;
+            } else if (index === 0) {
+                this.head = this.head.next;
+                this.count--;
+                return true;
+            } else if (index === this.count-1) {
+                this.tail = this.tail.prev;
+                this.count--;
+                return true;
+            } else if (index > 0) {
+                let item = this.getNode(index);
+                item.next.prev = item.prev;
+                item.prev.next = item.next;
+                item = item.next;
+                this.count--;
+                return true;
+            }
         }
 
-        return false;//change to throw type error
+        throw new TypeError("Type '".concat(JSON.stringify(index)).concat("' cannot be used as an index type."));
     }
 
     getNode(index) {
-        if (index >= this.count) {
-            return -1;//change to throw index error
-        } else if (index < 0) {
-            if (index <= -this.count) {
-                return -1;//change to throw index error
-            } else if (index >= -this.count/2) {
-                return this.tail.getPrevNode(-index);
-            } else if (index <= -this.count/2) {
-                return this.head.getNextNode(1-this.count + index);
+        if (Number.isInteger(index)) {
+            if (index >= this.count) {
+                return undefined;
+            } else if (index < 0) {
+                if (index <= -this.count) {
+                    return undefined;
+                } else if (index >= -this.count/2) {
+                    return this.tail.getPrevNode(-index);
+                } else if (index <= -this.count/2) {
+                    return this.head.getNextNode(1-this.count + index);
+                }
+            } else if (index <= this.count/2) {
+                return this.head.getNextNode(index);
+            } else if (index >= this.count/2) {
+                return this.tail.getPrevNode(this.count-1 - index);
             }
-        } else if (index <= this.count/2) {
-            return this.head.getNextNode(index);
-        } else if (index >= this.count/2) {
-            return this.tail.getPrevNode(this.count-1 - index);
         }
 
-        return -1;//throw type error
+        throw new TypeError("Type '".concat(JSON.stringify(index)).concat("' cannot be used as an index type."));
     }
 }
 
