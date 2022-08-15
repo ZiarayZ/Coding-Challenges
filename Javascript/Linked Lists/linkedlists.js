@@ -64,7 +64,7 @@ class SinglyLinkedList {
     }
 
     get popBack() {
-        let secLast = this.getNode(this.count-1);
+        let secLast = this.getNode(this.count-2);
         secLast.next = NaN;
         let last = this.tail;
         this.tail = secLast;
@@ -82,20 +82,30 @@ class SinglyLinkedList {
         if (index > this.count) {
             return -1;//change to throw error
         }
+        this.getNode(index+1)
         //use getNode method to locate index-1
     }
 
+    contains(item) {
+        for (let i = 0; i < this.count; i++) {
+            if (this.getNode(i).value === item) {
+                return true;//could also use a integer location instead
+            }
+        }
+        return false;//which would mean returning -1 here
+    }
+
     getNode(index) {
-        if (index > this.count) {
+        if (index+1 > this.count) {
             return -1;//change to throw error
         }
-        return this.head.getNode(index);
+        return this.head.getNode(index+1);
     }
 
     get values() {
         let arr = [];
         for (let i = 0; i < this.count; i++) {
-            arr[i] = this.getNode(i+1).value;
+            arr[i] = this.getNode(i).value;
         }
         return arr;
     }
