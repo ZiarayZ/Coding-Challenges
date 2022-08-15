@@ -5,8 +5,8 @@ class SLLNode {
     }
 
     getNode(index) {
-        if (index > 1) {
-            return this.next.getNode(index-1);
+        if (index > 0) {
+            return this.next.getNode(index);
         }
         return this;
     }
@@ -82,7 +82,7 @@ class SinglyLinkedList {
         if (index > this.count) {
             return -1;//change to throw error
         }
-        this.getNode(index+1)
+        this.getNode(index).next;
         //use getNode method to locate index-1
     }
 
@@ -99,7 +99,7 @@ class SinglyLinkedList {
         if (index+1 > this.count) {
             return -1;//change to throw error
         }
-        return this.head.getNode(index+1);
+        return this.head.getNode(index);
     }
 
     get values() {
