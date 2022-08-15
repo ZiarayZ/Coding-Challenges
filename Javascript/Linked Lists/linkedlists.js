@@ -34,10 +34,10 @@ class LinkedList {
     }
 
     get popFront() {
-        let previous = this.head;
+        let previous = this.head.value;
         this.head = this.head.next;
         this.count--;
-        return previous.value;
+        return previous;
     }
 
     contains(item) {
@@ -102,12 +102,11 @@ class SinglyLinkedList extends LinkedList {
     }
 
     get popBack() {
-        let secLast = this.getNode(this.count-2);
-        secLast.next = NaN;
-        let last = this.tail;
-        this.tail = secLast;
+        let last = this.tail.value;
+        this.tail = this.getNode(this.count-2);
+        this.tail.next = NaN;
         this.count--;
-        return last.value;
+        return last;
     }
 
     remove(index) {
@@ -189,10 +188,10 @@ class DoublyLinkedList extends LinkedList {
     }
     
     get popBack() {
-        let following = this.tail;
+        let following = this.tail.value;
         this.tail = this.tail.prev;
         this.count--;
-        return following.value;
+        return following;
     }
 
     remove(index) {
