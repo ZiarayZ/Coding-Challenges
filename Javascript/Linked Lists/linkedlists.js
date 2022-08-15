@@ -190,6 +190,7 @@ class DoublyLinkedList extends LinkedList {
     get popBack() {
         let following = this.tail.value;
         this.tail = this.tail.prev;
+        this.tail.next = NaN;
         this.count--;
         return following;
     }
