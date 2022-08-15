@@ -79,10 +79,18 @@ class SinglyLinkedList {
     }
 
     remove(index) {
-        if (index > this.count) {
-            return -1;//change to throw error
+        if (index >= this.count || index < 0) {
+            return false;//change to throw index error
+        } else if (index === 0) {
+            this.head = this.head.next;
+            return true;
+        } else {
+            let item = this.getNode(index);
+            item = item.next;
+            return true;
         }
-        this.getNode(index).next;
+
+        return false;//change to throw type error
         //use getNode method to locate index-1
     }
 
@@ -96,7 +104,7 @@ class SinglyLinkedList {
     }
 
     getNode(index) {
-        if (index+1 > this.count) {
+        if (index >= this.count) {
             return -1;//change to throw error
         }
         return this.head.getNode(index);
