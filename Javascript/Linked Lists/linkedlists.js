@@ -243,7 +243,7 @@ class DoublyLinkedList extends LinkedList {
     }
 }
 
-const linkedlist = new SinglyLinkedList();
+let linkedlist = new SinglyLinkedList();
 linkedlist.pushBack(4);
 linkedlist.pushBack(3);
 linkedlist.pushBack(2);
