@@ -1,0 +1,2 @@
+# Amazon Question
+Given an array of distinct elements and a number x, find if there is a pair with product equal to x.
