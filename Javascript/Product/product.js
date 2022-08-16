@@ -1,10 +1,23 @@
 //Given an array of distinct elements and a number x, find if there is a pair with product equal to x.
 
 function productNLOGN(value, array) {
-    for (let i = 0; i < array.length; i++) {
-        for (let j = i; j < array.length; j++) {
-            if (array[i] * array[j] == value) {
-                return [i, j];
+    if (value != 0) {
+        for (let i = 0; i < array.length; i++) {
+            if ((array[i] > 0 && array[i] <= value) || (array[i] < 0 && array[i] >= value)) {
+                for (let j = i; j < array.length; j++) {
+                    if (array[i] * array[j] == value) {
+                        return [i, j];
+                    }
+                }
+            }
+        }
+    } else {
+        if (array[0] == 0) {
+            return [0, 1];
+        }
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] == 0) {
+                return [0, i];
             }
         }
     }
