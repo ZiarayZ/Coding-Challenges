@@ -8,4 +8,4 @@ Questions and my solutions are in the Challenges branch.
   - [Product](../../tree/Challenges/Javascript/Product)<br />
 - [Golang](../../tree/Challenges/Golang)
   - [Traverse List](../../tree/Challenges/Golang/Traverse%20Linked%20List)
-  - [Hashing](../../tree/Challenges/Golang/Hashing)<br />
+  - [Z Order](../../tree/Challenges/Golang/Z_Order)<br />
