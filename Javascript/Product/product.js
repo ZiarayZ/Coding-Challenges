@@ -2,9 +2,9 @@
 
 function productNLOGN(value, array) {
     if (value != 0) {
-        for (let i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length-1; i++) {
             if ((array[i] > 0 && array[i] <= value) || (array[i] < 0 && array[i] >= value)) {
-                for (let j = i; j < array.length; j++) {
+                for (let j = i+1; j < array.length; j++) {
                     if (array[i] * array[j] == value) {
                         return [i, j];
                     }
