@@ -1,5 +1,6 @@
 # Coding-Challenges
 List of challenges I have completed/taken.<br />
+Questions and my solutions are in the Challenges branch.
 - [Javascript](https://github.com/ZiarayZ/Coding-Challenges/tree/Challenges/Javascript)
   - [Coins](https://github.com/ZiarayZ/Coding-Challenges/tree/Challenges/Javascript/Coins)
   - [Contains](https://github.com/ZiarayZ/Coding-Challenges/tree/Challenges/Javascript/Contains)
