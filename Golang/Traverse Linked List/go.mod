@@ -1,3 +1,3 @@
 module github.com/ZiarayZ/Coding-Challenges/tree/Challenges/Golang
 
-go 1.16
+go 1.19
