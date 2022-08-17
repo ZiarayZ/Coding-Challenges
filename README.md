@@ -7,5 +7,6 @@ Questions and my solutions are in the Challenges branch.
   - [Linked Lists](../../tree/Challenges/Javascript/Linked%20Lists)
   - [Product](../../tree/Challenges/Javascript/Product)<br />
 - [Golang](../../tree/Challenges/Golang)
+  - [Partition](../../tree/Challenges/Golang/Partition)
   - [Traverse List](../../tree/Challenges/Golang/Traverse%20Linked%20List)
   - [Z Order](../../tree/Challenges/Golang/Z_Order)<br />
