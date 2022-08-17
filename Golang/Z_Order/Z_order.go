@@ -25,8 +25,8 @@ func recall(value uint32) [2]uint16 {
 	coords := [2]uint16{0, 0}
 	var i uint16 = 0
 	for i = 0; i < 16; i++ {
-		coords[0] |= uint16((value >> (2 * i)) & (1 << i))
-		coords[1] |= uint16((value >> (2*i + 1)) & (1 << i))
+		coords[0] |= uint16((value >> (i)) & (1 << i))
+		coords[1] |= uint16((value >> (i + 1)) & (1 << i))
 	}
 	return coords
 }
