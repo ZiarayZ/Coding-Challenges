@@ -11,6 +11,7 @@ import (
 //x = even, y = odd
 //byte size of 4 or 8 depending on system, so will restrict to 4 for 32-bit systems
 //using unsigned ints for bit operations, 2 16 bits become a 32 bit
+// coords -> single value
 func interleave(coords [2]uint16) uint32 {
 	var num uint32 = 0
 	var i uint16 = 0
@@ -21,6 +22,7 @@ func interleave(coords [2]uint16) uint32 {
 	return num
 }
 
+// single value -> coords
 func recall(value uint32) [2]uint16 {
 	coords := [2]uint16{0, 0}
 	var i uint16 = 0
