@@ -43,13 +43,15 @@ func cut(B string) []string {
 			}
 		}
 	}
-	//cut out largest palindrome and return it
-	returnSlice := []string{B[start : start+maxLength]}
-	//repeat process for before and after largest palindrome
+	returnSlice := []string{}
+	//repeat process for before largest palindrome
 	if start > 0 {
 		firstSlice := cut(B[0:start])
 		returnSlice = append(returnSlice, firstSlice...)
 	}
+	//cut out largest palindrome and return it
+	returnSlice = append(returnSlice, B[start : start+maxLength])
+	//repeat process for before and after largest palindrome
 	if start+maxLength < n {
 		lastSlice := cut(B[start+maxLength:])
 		returnSlice = append(returnSlice, lastSlice...)
