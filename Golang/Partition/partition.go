@@ -63,6 +63,7 @@ func partite(A string) ([]string, int) {
 	A = strings.TrimSpace(A)
 	A = strings.ReplaceAll(A, " ", "")
 	sliced := cut(A)
+	//cuts needed = length of slice - 1
 	return sliced, len(sliced) - 1
 }
 
