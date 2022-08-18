@@ -4,17 +4,17 @@ import (
 	"fmt"
 )
 
-func catch(v rune, m map[rune]rune) []rune {
+func catchRune(v rune, m map[rune]rune) []rune {
 	slice := []rune{v}
 	for k, r := range m {
 		if v == r {
-			slice = append(slice, catch(k, m)...)
+			slice = append(slice, catchRune(k, m)...)
 		}
 	}
 	return slice
 }
 
-func report(input map[rune]rune) map[rune][]rune {
+func reportRune(input map[rune]rune) map[rune][]rune {
 	m := make(map[rune][]rune)
 
 	//separate loop for populating map, so there's no chance of overwriting/erasing runes
@@ -25,7 +25,35 @@ func report(input map[rune]rune) map[rune][]rune {
 	//write in initial runes
 	for k, r := range input {
 		if k != r {
-			m[r] = append(m[r], catch(k, input)...)
+			m[r] = append(m[r], catchRune(k, input)...)
+		}
+	}
+
+	return m
+}
+
+func catchString(v string, m map[string]string) []string {
+	slice := []string{v}
+	for k, r := range m {
+		if v == r {
+			slice = append(slice, catchString(k, m)...)
+		}
+	}
+	return slice
+}
+
+func reportString(input map[string]string) map[string][]string {
+	m := make(map[string][]string)
+
+	//separate loop for populating map, so there's no chance of overwriting/erasing runes
+	for k := range input {
+		m[k] = []string{}
+	}
+
+	//write in initial runes
+	for k, r := range input {
+		if k != r {
+			m[r] = append(m[r], catchString(k, input)...)
 		}
 	}
 
@@ -33,14 +61,27 @@ func report(input map[rune]rune) map[rune][]rune {
 }
 
 func main() {
-	m := make(map[rune]rune)
+	mRune := make(map[rune]rune)
+	mString := make(map[string]string)
 	//example input
-	m['A'] = 'A'
-	m['B'] = 'A'
-	m['C'] = 'B'
-	m['D'] = 'B'
-	m['E'] = 'D'
-	m['F'] = 'E'
-	fmt.Println(m)
-	fmt.Println(report(m))
+	mRune['A'] = 'A'
+	mRune['B'] = 'A'
+	mRune['C'] = 'B'
+	mRune['D'] = 'B'
+	mRune['E'] = 'D'
+	mRune['F'] = 'E'
+	mString["A"] = "A"
+	mString["B"] = "A"
+	mString["C"] = "B"
+	mString["D"] = "B"
+	mString["E"] = "D"
+	mString["F"] = "E"
+	fmt.Println()
+	fmt.Println("Example test using runes:")
+	fmt.Println(mRune)
+	fmt.Println(reportRune(mRune))
+	fmt.Println()
+	fmt.Println("Example test with easy to read strings:")
+	fmt.Println(mString)
+	fmt.Println(reportString(mString))
 }
