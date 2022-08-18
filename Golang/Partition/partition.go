@@ -32,7 +32,7 @@ func cut(B string) []string {
 			}
 
 			//if largest palindrome is the entire input just return the input
-			if i == 0 && j+1 == n {
+			if flag && i == 0 && j+1 == n {
 				return []string{B}
 			}
 
@@ -50,7 +50,7 @@ func cut(B string) []string {
 		returnSlice = append(returnSlice, firstSlice...)
 	}
 	//cut out largest palindrome and return it
-	returnSlice = append(returnSlice, B[start : start+maxLength])
+	returnSlice = append(returnSlice, B[start:start+maxLength])
 	//repeat process for before and after largest palindrome
 	if start+maxLength < n {
 		lastSlice := cut(B[start+maxLength:])
