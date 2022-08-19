@@ -18,9 +18,6 @@ func countDigits(n int) int {
 func rotate(num1 int, num2 int) bool {
 	digits1 := countDigits(num1)
 	digits2 := countDigits(num2)
-	if digits1 != digits2 {
-		return false
-	}
 
 	return true
 }
