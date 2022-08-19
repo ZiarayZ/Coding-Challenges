@@ -47,16 +47,29 @@ func rotate(num1 int, num2 int) bool {
 }
 
 func recycle(nums []int) int {
+	count := 0
+	paired := []int{}
 	for i := 0; i < len(nums)-1; i++ {
 		for j := i + 1; j < len(nums); j++ {
-			if rotate(nums[i], nums[j]) {
-				fmt.Println("caught rotation")
+			//ignore paired j's
+			truth := false
+			for _, a := range paired {
+				if a == j {
+					truth = true
+				}
+			}
+			//check rotations
+			if !truth && rotate(nums[i], nums[j]) {
+				count++
+				paired = append(paired, j)
+				j = len(nums)
 			}
 		}
 	}
+	return count
 }
 
 func main() {
-	numbers := []int{}
+	numbers := []int{69, 96, 102, 21, 5}
 	fmt.Println(recycle(numbers))
 }
