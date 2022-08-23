@@ -8,13 +8,14 @@ func calculate(A []int, B []int, gas int, pos int, loc int) (int, bool) {
 	N := len(A)
 	N2 := len(B)
 	if N != N2 {
-		return pos, false
+		return -1, false
 	} else if pos >= N {
 		pos = -1
 	}
 	pos++
 	gas += A[pos]
 	fmt.Println(gas, B[pos])
+	//this catches on the first check, when it should skip the first check...
 	if pos == loc {
 		return pos, true
 	}
