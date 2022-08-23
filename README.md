@@ -10,5 +10,6 @@ Questions and my solutions are in the Challenges branch.
   - [Employees](../../tree/Challenges/Golang/Employees)
   - [Partition](../../tree/Challenges/Golang/Partition)
   - [Rotations](../../tree/Challenges/Golang/Rotations)
+  - [Routes](../../tree/Challenges/Golang/Routes)
   - [Traverse List](../../tree/Challenges/Golang/Traverse%20Linked%20List)
   - [Z Order](../../tree/Challenges/Golang/Z_Order)<br />
