@@ -24,9 +24,10 @@ func distinct(val string) int {
 	//get all unique chars, for all 1 length distinct substrings
 	values := unique([]rune(val))
 	//temporary return
-	return len(values)
+	return len(values) + 1 //add 1 for the full string itself
 }
 
 func main() {
+	//should return "9" as: "helo wrd."
 	fmt.Println(distinct("hello world."))
 }
