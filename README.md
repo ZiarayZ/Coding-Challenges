@@ -12,6 +12,6 @@ Questions and my solutions are in the Challenges branch.
   - [Partition Palindromes](../../tree/Challenges/Golang/Partition)
   - [Integer Rotations](../../tree/Challenges/Golang/Rotations)
   - [Gas Routes](../../tree/Challenges/Golang/Routes)
-  - [Stairs](../../tree/Challengs/Golang/Stairs)
+  - [Stairs](../../tree/Challenges/Golang/Stairs)
   - [Traverse List](../../tree/Challenges/Golang/Traverse%20Linked%20List)
   - [Z Order](../../tree/Challenges/Golang/Z_Order)<br />
