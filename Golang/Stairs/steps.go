@@ -34,7 +34,20 @@ func climb(n int) int {
 	return value
 }
 
+func mapClimb(n int) int {
+	//return exact combos below 3 steps
+	if n == 3 {
+		return 4
+	} else if n == 2 {
+		return 2
+	} else if n == 1 {
+		return 1
+	}
+
+	return 0
+}
+
 func main() {
 	steps := 10
-	fmt.Println("There are", climb(steps), "ways to climb", steps, "steps.")
+	fmt.Println("There are", mapClimb(steps), "ways to climb", steps, "steps.")
 }
