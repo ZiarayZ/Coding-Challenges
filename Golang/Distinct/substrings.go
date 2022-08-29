@@ -29,5 +29,6 @@ func distinct(val string) int {
 
 func main() {
 	//should return "9" as: "helo wrd."
+	//and an additional "1" for the full string
 	fmt.Println(distinct("hello world."))
 }
