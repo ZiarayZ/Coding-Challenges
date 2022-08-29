@@ -44,6 +44,16 @@ func mapClimb(n int) int {
 		return 1
 	}
 
+	variations := make(map[string]bool)
+	//variations to do 3 steps
+	triple := []string{"111", "12", "21", "3"}
+	//variations to do 2 steps
+	double := []string{"11", "2"}
+
+	for i := 0; i < n/3; i++ {
+
+	}
+
 	return 0
 }
 
