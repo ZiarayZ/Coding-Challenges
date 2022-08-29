@@ -4,31 +4,28 @@ import (
 	"fmt"
 )
 
-func unique(runeSlice []rune) []string {
-	keys := make(map[rune]bool)
-	list := []string{}
-
-	//get every unique character in slice of runes
-	//append it all to a slice of strings
-	for _, entry := range runeSlice {
-		if _, value := keys[entry]; !value {
-			keys[entry] = true
-			list = append(list, string(entry))
+func distinct(val string) int {
+	//create map to check distinct strings
+	keys := make(map[string]bool)
+	variation := 0
+	//loop through every possible character
+	for i := 0; i < len([]rune(val))-1; i++ {
+		//loop against every other possible character
+		for j := i; j <= len([]rune(val)); j++ {
+			//check against map
+			if _, value := keys[val[i:j]]; !value {
+				keys[val[i:j]] = true
+			}
+			//empty character is a distinct substring, but it clashes with a space character, other characters can be added here to fix those
+			if val[i:j] == " " {
+				variation++
+			}
 		}
 	}
-
-	return list
-}
-
-func distinct(val string) int {
-	//get all unique chars, for all 1 length distinct substrings
-	values := unique([]rune(val))
-	//temporary return
-	return len(values) + 1 //add 1 for the full string itself
+	//return length of map
+	return len(keys) + variation
 }
 
 func main() {
-	//should return "9" as: "helo wrd."
-	//and an additional "1" for the full string
-	fmt.Println(distinct("hello world."))
+	fmt.Println(distinct("Hello World."))
 }
