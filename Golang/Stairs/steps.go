@@ -22,10 +22,11 @@ func climb(n int) int {
 	expo := n / 3
 	value := int(math.Pow(4, float64(expo)))
 	//add the remainder after all the 3 steps
+	//the remainder causes issues
 	if n%3 == 2 {
-		value *= 2
+		value += (expo + 1) * 2
 	} else if n%3 == 1 {
-		value++
+		value += expo + 1
 	}
 
 	return value
