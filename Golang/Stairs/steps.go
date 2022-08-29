@@ -25,10 +25,10 @@ func climb(n int) int {
 	//the remainder causes issues
 	if n%3 == 2 {
 		//TODO: introduce the 5 step method check
-		value += (expo + 1) * 2
+		value *= (expo + 1) * 2
 	} else if n%3 == 1 {
 		//TODO: introduce the 4 step method check
-		value += expo + 1
+		value *= expo + 1
 	}
 
 	return value
