@@ -9,6 +9,7 @@ Questions and my solutions are in the Challenges branch.
 - [Golang](../../tree/Challenges/Golang)
   - [Distinct Substrings](../../tree/Challenges/Golang/Distinct)
   - [Employees](../../tree/Challenges/Golang/Employees)
+  - [Integer Palindromes](../../tree/Challenges/Golang/Palindrome)
   - [Partition Palindromes](../../tree/Challenges/Golang/Partition)
   - [Integer Rotations](../../tree/Challenges/Golang/Rotations)
   - [Gas Routes](../../tree/Challenges/Golang/Routes)
