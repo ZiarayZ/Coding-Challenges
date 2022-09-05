@@ -19,7 +19,23 @@ func toDecimal(val string) int {
 }
 
 func toBinary(val int) string {
-	return "0"
+	newVal := ""
+	power := 1
+	//find largest power of 2 after val
+	for power < val {
+		power <<= 1
+	}
+	power >>= 1 //revert it so it is largest possible power of 2 below val
+	//loop from largest power of 2 till 1, creating the binary string from left to right
+	for i := power; i > 0; i /= 2 {
+		if i <= val {
+			val -= i
+			newVal += "1"
+		} else {
+			newVal += "0"
+		}
+	}
+	return newVal
 }
 
 func main() {
