@@ -4,14 +4,17 @@ import (
 	"fmt"
 )
 
-func toDecimal() {
-
+func toDecimal(val string) int {
+	return 0
 }
 
-func toBinary() {
-
+func toBinary(val int) string {
+	return "0"
 }
 
 func main() {
-	fmt.Println("")
+	bin := "10111"
+	dec := 45
+	fmt.Println("Converting", bin, "to decimal:", toDecimal(bin))
+	fmt.Println("Converting", dec, "to binary:", toBinary(dec))
 }
