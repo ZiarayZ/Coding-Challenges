@@ -7,6 +7,7 @@ Questions and my solutions are in the Challenges branch.
   - [Linked Lists](../../tree/Challenges/Javascript/Linked%20Lists)
   - [Product of Integers](../../tree/Challenges/Javascript/Product)<br />
 - [Golang](../../tree/Challenges/Golang)
+  - [Binary - Decimal Conversions](../../tree/Challenges/Golang/Conversion)
   - [Distinct Substrings](../../tree/Challenges/Golang/Distinct)
   - [Employees](../../tree/Challenges/Golang/Employees)
   - [Integer Palindromes](../../tree/Challenges/Golang/Palindrome)
