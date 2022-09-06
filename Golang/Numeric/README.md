@@ -1,4 +1,4 @@
-# [Adobe]() Question
+# [Adobe](https://github.com/twowaits/SDE-Interview-Questions/tree/master/Adobe) Question
 - Validate if a given string is numeric. Examples:
     - "0" => true
     - " 0.1 " => true
