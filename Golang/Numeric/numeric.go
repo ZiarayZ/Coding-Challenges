@@ -8,6 +8,10 @@ import (
 func isNumeric(val string) int {
 	//strip whitespace from string as " 0.1 " still counts
 	rs := []rune(strings.TrimSpace(val))
+	//empty string is not numeric
+	if len(rs) == 0 {
+		return 0
+	}
 	nums := []rune{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
 	//bools for duplicate "e" and "."
 	eC := false
@@ -44,7 +48,7 @@ func isNumeric(val string) int {
 }
 
 func main() {
-	num := "7"
+	num := "10e1.0"
 	ret := isNumeric(num)
 	num = "'" + num + "'"
 	check := "is"
