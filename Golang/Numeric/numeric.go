@@ -12,9 +12,9 @@ func main() {
 	num := "7"
 	ret := isNumeric(num)
 	num = "'" + num + "'"
-	check := ""
+	check := "is"
 	if ret == 0 {
-		check = "not"
+		check = "is not"
 	}
-	fmt.Println("Value", num, "is", check, "a valid numeric.")
+	fmt.Println("Value", num, check, "a valid numeric.")
 }
