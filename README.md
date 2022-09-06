@@ -10,6 +10,7 @@ Questions and my solutions are in the Challenges branch.
   - [Binary - Decimal Conversions](../../tree/Challenges/Golang/Conversion)
   - [Distinct Substrings](../../tree/Challenges/Golang/Distinct)
   - [Employees](../../tree/Challenges/Golang/Employees)
+  - [Numeric Strings](../../tree/Challenges/Golang/Numeric)
   - [Integer Palindromes](../../tree/Challenges/Golang/Palindrome)
   - [Partition Palindromes](../../tree/Challenges/Golang/Partition)
   - [Integer Rotations](../../tree/Challenges/Golang/Rotations)
