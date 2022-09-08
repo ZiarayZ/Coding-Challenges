@@ -16,6 +16,7 @@ Questions and my solutions are in the Challenges branch.
   - [Integer Rotations](../../tree/Challenges/Golang/Rotations)
   - [Gas Routes](../../tree/Challenges/Golang/Routes)
   - [Count Set Bits](../../tree/Challenges/Golang/Set%20Bits)
+  - [Stacks](../../tree/Challenges/Golang/Stack)
   - [Combination of Steps](../../tree/Challenges/Golang/Stairs)
   - [Traverse List](../../tree/Challenges/Golang/Traverse%20Linked%20List)
   - [Z Order](../../tree/Challenges/Golang/Z_Order)<br />
