@@ -14,7 +14,6 @@ type Node struct {
 type Stack struct {
 	last    *Node
 	minimum *Node
-	t       string // asserts minimum's data type
 }
 
 //stack methods
@@ -22,6 +21,7 @@ func (s *Stack) min() interface{} {
 	return s.minimum.value
 }
 func (s *Stack) pop() interface{} {
+	//minimum needs to be changed or returned to nil
 	toRet := s.last.value
 	//set last to new last, memory loss?
 	s.last = s.last.prev
