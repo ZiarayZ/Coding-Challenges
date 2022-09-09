@@ -32,6 +32,7 @@ func (s *Stack) push(val interface{}) bool {
 	if s.minimum == nil {
 		//this can cause issues by being a value that can't be compared
 		s.minimum = s.last
+		return true
 	} else {
 		var i int
 		var iF float64
