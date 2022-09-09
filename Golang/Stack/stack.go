@@ -86,7 +86,6 @@ func (s *Stack) push(val interface{}) bool {
 		floatMin, floaOk := s.minimum.value.(float64)
 		//compares between floats first then ints as floats may have more precision
 		if (floaOk && isFl && iF <= floatMin) || (minOk && !isFl && i <= testMin) {
-			s.last.minimum = s.minimum
 			s.minimum = s.last
 		} else {
 			s.last.minimum = s.minimum
