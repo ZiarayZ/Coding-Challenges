@@ -6,8 +6,9 @@ import (
 
 // item on stack
 type Node struct {
-	value interface{}
-	prev  *Node
+	value   interface{}
+	prev    *Node
+	minimum *Node
 }
 
 //stack itself
@@ -18,11 +19,17 @@ type Stack struct {
 
 //stack methods
 func (s *Stack) min() interface{} {
+	if s.minimum == nil {
+		return nil
+	}
 	return s.minimum.value
 }
 func (s *Stack) pop() interface{} {
 	//minimum needs to be changed or returned to nil
 	toRet := s.last.value
+	if s.last == s.minimum {
+		s.minimum = s.last.minimum
+	}
 	//set last to new last, memory loss?
 	s.last = s.last.prev
 	return toRet
@@ -80,6 +87,8 @@ func (s *Stack) push(val interface{}) bool {
 		//compares between floats first then ints as floats may have more precision
 		if (floaOk && isFl && iF <= floatMin) || (minOk && !isFl && i <= testMin) {
 			s.minimum = s.last
+		} else {
+			s.last.minimum = s.minimum
 		}
 
 		//if some bug occurred with the minimum value last push we return that
